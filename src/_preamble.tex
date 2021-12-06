@@ -1,0 +1,45 @@
+\documentclass[xetex, aspectratio=169, russian]{beamer}
+\usecolortheme{beaver}
+\beamertemplatenavigationsymbolsempty
+\setbeamertemplate{footline}[frame number]
+
+% Локализация
+\usepackage{fontspec}
+\usepackage{xecyr}
+\usepackage[english, russian]{babel}
+
+% Шрифты
+% \defaultfontfeatures{Ligatures = {TeX, Historic}, Mapping = tex-text}
+\setmainfont{CMU Serif}
+\setsansfont{CMU Sans Serif}
+\setmonofont{CMU Typewriter Text}
+\newfontfamily{\agio}{AgioUnicode}
+
+% Таблицы
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{makecell}
+\usepackage{tabularx}
+\renewcommand\theadfont{\normalsize}
+
+% Графика
+\usepackage[babel]{microtype}
+\usepackage[autostyle]{csquotes}
+\usepackage{xcolor}
+\usepackage{textcomp}
+\usepackage{graphicx}
+\graphicspath{{../fig/}}
+
+% Разное
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{fancyvrb}
+
+% Библиография
+\include{_biblatex}
+
+\title[СКАТ]{Санкт-Петербургский корпус агиографических текстов}
+\subtitle{СКАТ}
+\date{}
+
+\begin{document}
