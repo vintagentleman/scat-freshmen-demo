@@ -8,13 +8,14 @@
     \begin{itemize}
       \item создание кафедрального фонда фото- и ксерокопий списков севернорусских житий и похвальных слов XV--XVII~вв.\autocite{averina_alexeeva_gerd:1996}
       \item перевод в машиночитаемый формат при помощи 8-битной кодировки на базе ASCII и специальных правил транслитерации
+      \item версия Unicode 1.0 появилась в 1991~г., а все недостающие выносные~--- в версии 6.1 блока Cyrillic Extended-B (2012~г.)
     \end{itemize}
   \end{block}
 \end{frame}
 
 \begin{frame}
   \frametitle{Транслитерация}
-  \framesubtitle{КК 88~об.}
+  \framesubtitle{Житие Корнилия Комельского, 88~об.}
 
   \begin{columns}[c]
     \begin{column}{6cm}
@@ -46,20 +47,33 @@
   \frametitle{Правила транслитерации}
 
   \begin{block}{Графемы}
-    \texttt{+} --- {\agio ѣ}, \texttt{W} --- {\agio ѡ}, \texttt{R} --- {\agio ѧ}\ldots
+    \begin{table}
+      \begin{tabularx}{\textwidth}{XXXXXXXXXXXXXX}
+        \texttt{I} & \texttt{R} & \texttt{V} & \texttt{W} & \texttt{U} & \texttt{+} & \texttt{F} &
+        \texttt{S} & \texttt{G} & \texttt{D} & \texttt{L} & \texttt{Q} & \texttt{Я} & \texttt{\$} \\
+        {\agio ї} & {\agio ѧ} & {\agio ѵ} & {\agio ѡ} & {\agio ѹ} & {\agio ѣ} & {\agio ѳ} &
+        {\agio ѕ} & {\agio ѫ} & {\agio ꙋ} & {\agio ѯ} & {\agio ѱ} & {\agio ꙗ} & {\agio ҂} \\
+      \end{tabularx}
+    \end{table}
   \end{block}
 
   \begin{block}{Надстрочные знаки}
-    \texttt{СТАГО\#} --- {\agio ст҃аго}, \texttt{BE(ч)PЪ} --- {\agio ве҇ⷱръ}, \texttt{ГРЕС+(Х)} --- {\agio гресѣⷯ}
+    \begin{table}
+      \begin{tabularx}{\textwidth}{XXX}
+        Титло & \texttt{СТАГО\#} & {\agio ст҃аго} \\
+        Буквотитло & \texttt{BE(ч)PЪ} & {\agio ве҇ⷱръ} \\
+        Выносная буква & \texttt{ГРЕС+(Х)} & {\agio гресѣⷯ} \\
+      \end{tabularx}
+    \end{table}
   \end{block}
 
   \begin{block}{Переносы}
-    \begin{itemize}
-      \item \texttt{\&} --- новая строка
-      \item \texttt{\textbackslash} --- колонка
-      \item \texttt{Z -?\textbackslash{}d+} --- страница
-    \end{itemize}
+      \texttt{\&}~--- новая строка,
+      \texttt{\textbackslash}~--- столбец,
+      \texttt{Z -?\textbackslash{}d+} --- страница
   \end{block}
+
+  % Знаки препинания, имена собственные
 \end{frame}
 
 \begin{frame}
@@ -71,7 +85,7 @@
       \item публикация серии <<Памятники русской агиографической литературы>>\autocite{coll:2012}
       \item выход в онлайн: \url{http://project.phil.spbu.ru/scat/}
       \item XML-представление рукописей на основе рекомендаций консорциума TEI\autocite{alexeev:2009}
-      \item \alert{разработка и апробация формата морфологической разметки}\autocite{ivanova:2006}
+      \item разработка и апробация формата морфологической разметки\autocite{ivanova:2006}
     \end{itemize}
   \end{block}
 \end{frame}
@@ -81,6 +95,24 @@
 
   \begin{center}
     \includegraphics[width=0.7\linewidth]{books}
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  \frametitle{XML}
+  \framesubtitle{eXtensible Markup Language}
+
+  \begin{center}
+    \includegraphics[width=\linewidth]{xml}
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  \frametitle{TEI}
+  \framesubtitle{Text Encoding Initiative}
+
+  \begin{center}
+    \includegraphics[width=\linewidth]{tei}
   \end{center}
 \end{frame}
 
@@ -124,7 +156,6 @@
     \item малый объём текстов
     \item<2-> орфографическая нормализация
     \item<3-> разные кодировки, разные коллективы\ldots
-    \item<4-> <<искусство для искусства>>
   \end{enumerate}
 
   \onslide<2>
@@ -153,17 +184,19 @@
 
   \begin{block}{}
     \begin{enumerate}
-      \item<1-> ручной
-      \begin{itemize}
+      \item<1-> ручной \begin{itemize}
         \item древнерусский подкорпус НКРЯ (500 тыс.\ с/у)
         \item подкорпус древнерусских берестяных грамот (20 тыс.\ с/у)
-        \item \alert<3->{СКАТ} (500 тыс.\ с/у)
+        \item \alert<4->{СКАТ} (500 тыс.\ с/у)
       \end{itemize}
-      \item<2-> на основе грамматического словаря
-      \begin{itemize}
+      \item<2-> на основе грамматического словаря \begin{itemize}
         \item церковнославянский подкорпус НКРЯ (4,7 млн с/у)
         \item старорусский подкорпус НКРЯ (7 млн с/у)
         \item система <<Манускрипт>> (3,5 млн с/у)
+      \end{itemize}
+      \item<3-> другие подходы \begin{itemize}
+        \item проецирование разметки с современных языков
+        \item нейросети
       \end{itemize}
     \end{enumerate}
   \end{block}
@@ -175,6 +208,18 @@
   \begin{center}
     \includegraphics[width=0.9\linewidth]{spec}
   \end{center}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Настоящее и будущее проекта}
+  \framesubtitle{2010--2020-е~гг.}
+
+  \begin{block}{Морфология}
+    \begin{itemize}
+      \item морфологическая разметка 5 житий ($\sim$50~тыс.\ с/у)
+      \item лемматизация и полуавтоматическая разметка\autocite{sipunin:2020}
+    \end{itemize}
+  \end{block}
 \end{frame}
 
 \begin{frame}
@@ -203,19 +248,7 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{Настоящее и будущее проекта}
-  \framesubtitle{2010--2020-е~гг.}
-
-  \begin{block}{Морфология}
-    \begin{itemize}
-      \item морфологическая разметка 5 житий (50~тыс.\ с/у)
-      \item лемматизация и полуавтоматическая разметка\autocite{sipunin:2020}
-    \end{itemize}
-  \end{block}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Лемматизация}
+  \frametitle{Размеченные тексты + лемматизация}
 
   \footnotesize \setlength{\aboverulesep}{0.5pt} \setlength{\belowrulesep}{0.5pt}
   \begin{tabularx}{\textwidth}{XXp{0.75cm}p{0.75cm}p{0.75cm}p{0.75cm}p{0.75cm}p{0.75cm}}
