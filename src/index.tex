@@ -149,6 +149,15 @@
 \end{frame}
 
 \begin{frame}
+  \frametitle{Морфологическая разметка}
+  \framesubtitle{\url{https://nestor.uit.no/sentences/50665}}
+
+  \begin{center}
+    \includegraphics[width=\linewidth]{morphology}
+  \end{center}
+\end{frame}
+
+\begin{frame}
   \frametitle{Морфологический анализ исторических текстов}
   \framesubtitle{Проблемы}
 
@@ -187,7 +196,7 @@
       \item<1-> ручной \begin{itemize}
         \item древнерусский подкорпус НКРЯ (500 тыс.\ с/у)
         \item подкорпус древнерусских берестяных грамот (20 тыс.\ с/у)
-        \item \alert<4->{СКАТ} (500 тыс.\ с/у)
+        \item СКАТ (500 тыс.\ с/у)
       \end{itemize}
       \item<2-> на основе грамматического словаря \begin{itemize}
         \item церковнославянский подкорпус НКРЯ (4,7 млн с/у)
@@ -284,7 +293,7 @@
   \frametitle{Настоящее и будущее проекта}
   \framesubtitle{2010--2020-е~гг.}
 
-  \begin{block}{Высшие уровни}
+  \begin{block}{Разметка единиц, больших, чем слово}
     \begin{itemize}
       \item разработка форматов синтаксической разметки\autocite{gorlov:2018}
       \item разметка дискурсивных элементов содержания: глав\autocite{rogozina:2015}, цитат\autocite{alexeeva:2019}
@@ -296,10 +305,23 @@
   \frametitle{Настоящее и будущее проекта}
   \framesubtitle{2010--2020-е~гг.}
 
-  \begin{block}{Технологии}
+  \begin{block}{Открытость}
+  \begin{itemize}
+    \item тексты с разметкой и без: \url{https://github.com/vintagentleman/scat-content}
+    \item модули для их обработки: \url{https://github.com/vintagentleman/scat-toolkit}
+  \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Настоящее и будущее проекта}
+  \framesubtitle{2010--2020-е~гг.}
+
+  \begin{block}{TXM}
     \begin{itemize}
-      \item миграция на платформу TXM: \url{http://textometrie.ens-lyon.fr/}
-      \item доступ через интернет --- \foreignlanguage{english}{coming soon}
+      \item корпус-менеджер с богатым инструментарием для количественных и качественных исследований
+      \item требует установки на локальную машину: \url{https://txm.gitpages.huma-num.fr/textometrie/index.html}
+      \item есть веб-версия с урезанными возможностями, но там есть СКАТ: \url{https://txm-cactus.huma-num.fr/txm/}
     \end{itemize}
   \end{block}
 \end{frame}
