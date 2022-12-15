@@ -11,6 +11,9 @@ jobs:
       - name: Check out
         uses: actions/checkout@v3
 
+      - name: Install AgioUnicode font
+        run: mkdir -p ~/.local/share/fonts && cp AgioUnicode.ttf ~/.local/share/fonts
+
       - name: Cache Tectonic data
         uses: actions/cache@v3
         with:
