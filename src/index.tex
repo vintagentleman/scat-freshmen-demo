@@ -6,9 +6,9 @@
 
   \begin{block}{}
     \begin{itemize}
-      \item создание кафедрального фонда фото- и ксерокопий списков севернорусских житий и похвальных слов XV--XVII~вв.\autocite{averina_alexeeva_gerd:1996}
-      \item перевод в машиночитаемый формат при помощи 8-битной кодировки на базе ASCII и специальных правил транслитерации
-      \item версия Unicode 1.0 появилась в 1991~г., а все недостающие выносные~--- в версии 6.1 блока Cyrillic Extended-B (2012~г.)
+      \item<1-> создание кафедрального фонда фото- и ксерокопий списков севернорусских житий и похвальных слов XV--XVII~вв.\autocite{averina_alexeeva_gerd:1996}
+      \item<2-> перевод в машиночитаемый формат при помощи 8-битной кодировки на базе ASCII и специальных правил транслитерации
+      \item<3-> версия Unicode 1.0 появилась в 1991~г., а все недостающие выносные~--- в версии 6.1 блока Cyrillic Extended-B (2012~г.)
     \end{itemize}
   \end{block}
 \end{frame}
@@ -22,6 +22,7 @@
       \includegraphics[width=5cm]{KK_src}
     \end{column}
 
+    \onslide<2>
     \begin{column}{6cm} \ttfamily \footnotesize
       \textcolor{gray}{Z -88} ПPEДAXOMЪ. W ПOЗДHOXO\& \\
       ЖEHIИ CTAГO\#. WБЫ\& \\
@@ -70,7 +71,7 @@
   \begin{block}{Переносы}
       \texttt{\&}~--- новая строка,
       \texttt{\textbackslash}~--- столбец,
-      \texttt{Z -?\textbackslash{}d+} --- страница
+      \texttt{Z -88} --- страница
   \end{block}
 
   % Знаки препинания, имена собственные
@@ -84,8 +85,8 @@
     \begin{itemize}
       \item публикация серии <<Памятники русской агиографической литературы>>\autocite{coll:2012}
       \item выход в онлайн: \url{http://project.phil.spbu.ru/scat/}
-      \item XML-представление рукописей на основе рекомендаций консорциума TEI\autocite{alexeev:2009}
       \item разработка и апробация формата морфологической разметки\autocite{ivanova:2006}
+      \item XML-представление рукописей на основе рекомендаций TEI\autocite{alexeev:2009}
     \end{itemize}
   \end{block}
 \end{frame}
@@ -95,6 +96,39 @@
 
   \begin{center}
     \includegraphics[width=0.7\linewidth]{books}
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Морфологическая разметка}
+
+  \footnotesize \setlength{\aboverulesep}{0.5pt} \setlength{\belowrulesep}{0.5pt}
+  \begin{tabularx}{\textwidth}{Xp{0.75cm}p{0.75cm}p{0.75cm}p{0.75cm}p{0.75cm}p{0.75cm}}
+    \toprule
+    \texttt{М(с)ЦА} & сущ  & jo & род & ед & м  &    \\ \midrule
+    \texttt{IЮНR} & сущ  & jo & род & ед & м  &    \\ \midrule
+    \texttt{ДНЬ\#} & сущ  & en & им  & ед & м  &    \\ \midrule
+    \texttt{А\#} & 1    &    &     &    &    &    \\ \midrule
+    \texttt{ЖИТIЕ} & сущ  & jo & им  & ед & ср &    \\ \midrule
+    \texttt{И} & союз &    &     &    &    &    \\ \midrule
+    \texttt{ПОДВИЗИ} & сущ  & о  & им  & мн & м  & *  \\ \midrule
+    \texttt{И} & союз &    &     &    &    &    \\ \midrule
+    \texttt{W(Т)ЧАСТИ\&} & нар  &    &     &    &    &    \\ \midrule
+    \texttt{ЧЮДЕ(с)} & сущ  & es & род & мн & ср &    \\ \midrule
+    \texttt{ИСПОВ+ДА(н)Е} & сущ  & jo & им  & ед & ср & +и \\ \midrule
+    \texttt{ПРП(Д)БНА(г)} & прил & тв & род & ед & м  &    \\ \midrule
+    \texttt{W(ц)} & сущ  & jo & род & ед & м  &    \\ \midrule
+    \texttt{НШЕ(г)} & мест & м  & род & ед & м  &    \\ \midrule
+    \texttt{*ДIОНIСIА} & сущ  & jo & род & ед & м  &    \\ \midrule
+    \texttt{*ГЛD(ШИ)ЦКА(г);\&} & прил & тв & род & ед & м  &    \\ \bottomrule
+  \end{tabularx}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Спецификация формата разметки}
+
+  \begin{center}
+    \includegraphics[width=0.9\linewidth]{spec}
   \end{center}
 \end{frame}
 
@@ -117,7 +151,7 @@
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{PDF и XML}
+  \frametitle{PDF + TEI XML}
 
   \begin{columns}[c]
     \begin{column}{6cm}
@@ -128,33 +162,38 @@
       \begin{Verbatim}[fontsize=\footnotesize]
 <pb n="-25"/>
 <lb n="1"/>
-<w lemma="м+сяць"
-   msd="jo;род;ед;м"
-   pos="сущ"
-   reg="м+сяца"
-   src="М+СRЦА"
-   xml:id="CrlNvz.0">
+<w src="М+СRЦА"
+   xml:id="CrlNvz.1">
   мѣсѧца</w>
 <lb n="2"/>
-<w lemma="февруарии"
-   msd="jo;род;ед;м"
-   pos="сущ"
-   reg="февруария"
-   src="ФЕVРDАРIА"
-   xml:id="CrlNvz.1">
+<w src="ФЕVРDАРIА"
+   xml:id="CrlNvz.2">
   феѵрꙋарїа</w>
+<w src="ВЪ"
+   xml:id="CrlNvz.3">
+  въ</w>
+<c xml:id="CrlNvz.4">,</c>
+<w src="4"
+   xml:id="CrlNvz.5">
+  д҃
+</w>
 \end{Verbatim}
     \end{column}
   \end{columns}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Морфологическая разметка}
-  \framesubtitle{\url{https://nestor.uit.no/sentences/50665}}
+  \frametitle{Настоящее и будущее проекта}
+  \framesubtitle{2010--2020-е~гг.}
 
-  \begin{center}
-    \includegraphics[width=\linewidth]{morphology}
-  \end{center}
+  \begin{block}{Морфология}
+    \begin{itemize}
+      \item морфологическая разметка 5 житий ($\sim$50~тыс.\ с/у)
+      \item лемматизация\autocite{sipunin:2018}
+      \item частичная автоматизация морфологической разметки\autocite{sipunin:2020}
+      \item конвергенция форматов представления
+    \end{itemize}
+  \end{block}
 \end{frame}
 
 \begin{frame}
@@ -193,17 +232,17 @@
 
   \begin{block}{}
     \begin{enumerate}
-      \item<1-> ручной \begin{itemize}
+      \item ручной \begin{itemize}
         \item древнерусский подкорпус НКРЯ (500 тыс.\ с/у)
         \item подкорпус древнерусских берестяных грамот (20 тыс.\ с/у)
-        \item СКАТ (500 тыс.\ с/у)
+        \item \alert{СКАТ (500 тыс.\ с/у)}
       \end{itemize}
-      \item<2-> на основе грамматического словаря \begin{itemize}
+      \item на основе грамматического словаря \begin{itemize}
         \item церковнославянский подкорпус НКРЯ (4,7 млн с/у)
         \item старорусский подкорпус НКРЯ (7 млн с/у)
         \item система <<Манускрипт>> (3,5 млн с/у)
       \end{itemize}
-      \item<3-> другие подходы \begin{itemize}
+      \item другие подходы \begin{itemize}
         \item проецирование разметки с современных языков
         \item нейросети
       \end{itemize}
@@ -212,52 +251,7 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{Спецификация формата разметки}
-
-  \begin{center}
-    \includegraphics[width=0.9\linewidth]{spec}
-  \end{center}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Настоящее и будущее проекта}
-  \framesubtitle{2010--2020-е~гг.}
-
-  \begin{block}{Морфология}
-    \begin{itemize}
-      \item морфологическая разметка 5 житий ($\sim$50~тыс.\ с/у)
-      \item лемматизация и полуавтоматическая разметка\autocite{sipunin:2020}
-    \end{itemize}
-  \end{block}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Размеченные тексты}
-
-  \footnotesize \setlength{\aboverulesep}{0.5pt} \setlength{\belowrulesep}{0.5pt}
-  \begin{tabularx}{\textwidth}{Xp{0.75cm}p{0.75cm}p{0.75cm}p{0.75cm}p{0.75cm}p{0.75cm}}
-    \toprule
-    \texttt{М(с)ЦА} & сущ  & jo & род & ед & м  &    \\ \midrule
-    \texttt{IЮНR} & сущ  & jo & род & ед & м  &    \\ \midrule
-    \texttt{ДНЬ\#} & сущ  & en & им  & ед & м  &    \\ \midrule
-    \texttt{А\#} & 1    &    &     &    &    &    \\ \midrule
-    \texttt{ЖИТIЕ} & сущ  & jo & им  & ед & ср &    \\ \midrule
-    \texttt{И} & союз &    &     &    &    &    \\ \midrule
-    \texttt{ПОДВИЗИ} & сущ  & о  & им  & мн & м  & *  \\ \midrule
-    \texttt{И} & союз &    &     &    &    &    \\ \midrule
-    \texttt{W(Т)ЧАСТИ\&} & нар  &    &     &    &    &    \\ \midrule
-    \texttt{ЧЮДЕ(с)} & сущ  & es & род & мн & ср &    \\ \midrule
-    \texttt{ИСПОВ+ДА(н)Е} & сущ  & jo & им  & ед & ср & +и \\ \midrule
-    \texttt{ПРП(Д)БНА(г)} & прил & тв & род & ед & м  &    \\ \midrule
-    \texttt{W(ц)} & сущ  & jo & род & ед & м  &    \\ \midrule
-    \texttt{НШЕ(г)} & мест & м  & род & ед & м  &    \\ \midrule
-    \texttt{*ДIОНIСIА} & сущ  & jo & род & ед & м  &    \\ \midrule
-    \texttt{*ГЛD(ШИ)ЦКА(г);\&} & прил & тв & род & ед & м  &    \\ \bottomrule
-  \end{tabularx}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Размеченные тексты + лемматизация}
+  \frametitle{Лемматизация}
 
   \footnotesize \setlength{\aboverulesep}{0.5pt} \setlength{\belowrulesep}{0.5pt}
   \begin{tabularx}{\textwidth}{XXp{0.75cm}p{0.75cm}p{0.75cm}p{0.75cm}p{0.75cm}p{0.75cm}}
@@ -289,6 +283,38 @@
   \end{center}
 \end{frame}
 
+\begin{frame}[fragile]
+  \frametitle{TEI XML + разметка}
+
+  \begin{columns}[c]
+    \begin{column}{6cm}
+      \includegraphics[width=\linewidth]{CN_pdf}
+    \end{column}
+
+    \begin{column}{6cm}
+      \begin{Verbatim}[fontsize=\footnotesize]
+<pb n="-25"/>
+<lb n="1"/>
+<w lemma="м+сяць"
+   msd="jo;род;ед;м"
+   pos="сущ"
+   reg="м+сяца"
+   src="М+СRЦА"
+   xml:id="CrlNvz.0">
+  мѣсѧца</w>
+<lb n="2"/>
+<w lemma="февруарии"
+   msd="jo;род;ед;м"
+   pos="сущ"
+   reg="февруария"
+   src="ФЕVРDАРIА"
+   xml:id="CrlNvz.1">
+  феѵрꙋарїа</w>
+\end{Verbatim}
+    \end{column}
+  \end{columns}
+\end{frame}
+
 \begin{frame}
   \frametitle{Настоящее и будущее проекта}
   \framesubtitle{2010--2020-е~гг.}
@@ -306,10 +332,11 @@
   \framesubtitle{2010--2020-е~гг.}
 
   \begin{block}{Открытость}
-  \begin{itemize}
-    \item тексты с разметкой и без: \url{https://github.com/vintagentleman/scat-content}
-    \item модули для их обработки: \url{https://github.com/vintagentleman/scat-toolkit}
-  \end{itemize}
+    \begin{itemize}
+      \item тексты с разметкой и без: \url{https://github.com/vintagentleman/scat-content}
+      \item модули для их обработки: \url{https://github.com/vintagentleman/scat-toolkit}
+      \item эта презентация: \url{https://github.com/vintagentleman/scat-freshmen-demo}
+    \end{itemize}
   \end{block}
 \end{frame}
 
@@ -324,4 +351,12 @@
       \item есть веб-версия с урезанными возможностями, но там есть СКАТ: \url{https://txm-cactus.huma-num.fr/txm/}
     \end{itemize}
   \end{block}
+\end{frame}
+
+\begin{frame}{}
+  \centering
+
+  \vfill
+  Q\&A
+  \vfill
 \end{frame}
