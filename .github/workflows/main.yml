@@ -1,0 +1,35 @@
+name: 'Build PDF slides'
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out
+        uses: actions/checkout@v3
+
+      - name: Cache Tectonic data
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/Tectonic
+          key: ${{ runner.os }}-tectonic-${{ hashFiles('**/*.tex') }}
+          restore-keys: |
+            ${{ runner.os }}-tectonic-
+
+      - name: Set up Tectonic + Biber
+        uses: wtfjoke/setup-tectonic@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          biber-version: 'latest'
+
+      - name: Run Tectonic + Biber
+        run: tectonic -X build
+
+      - name: Upload PDF slides
+        uses: actions/upload-artifact@v3
+        with:
+          name: Slides
+          path: build.pdf

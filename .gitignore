@@ -41,3 +41,7 @@
 *.nav
 *.snm
 *.vrb
+
+## Editor files:
+.idea/
+.vscode/
