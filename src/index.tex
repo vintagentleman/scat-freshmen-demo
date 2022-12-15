@@ -48,30 +48,28 @@
   \frametitle{Правила транслитерации}
 
   \begin{block}{Графемы}
-    \begin{table}
       \begin{tabularx}{\textwidth}{XXXXXXXXXXXXXX}
         \texttt{I} & \texttt{R} & \texttt{V} & \texttt{W} & \texttt{U} & \texttt{+} & \texttt{F} &
         \texttt{S} & \texttt{G} & \texttt{D} & \texttt{L} & \texttt{Q} & \texttt{Я} & \texttt{\$} \\
         {\agio ї} & {\agio ѧ} & {\agio ѵ} & {\agio ѡ} & {\agio ѹ} & {\agio ѣ} & {\agio ѳ} &
         {\agio ѕ} & {\agio ѫ} & {\agio ꙋ} & {\agio ѯ} & {\agio ѱ} & {\agio ꙗ} & {\agio ҂} \\
       \end{tabularx}
-    \end{table}
   \end{block}
 
   \begin{block}{Надстрочные знаки}
-    \begin{table}
       \begin{tabularx}{\textwidth}{XXX}
         Титло & \texttt{СТАГО\#} & {\agio ст҃аго} \\
         Буквотитло & \texttt{BE(ч)PЪ} & {\agio ве҇ⷱръ} \\
         Выносная буква & \texttt{ГРЕС+(Х)} & {\agio гресѣⷯ} \\
       \end{tabularx}
-    \end{table}
   \end{block}
 
   \begin{block}{Переносы}
-      \texttt{\&}~--- новая строка,
-      \texttt{\textbackslash}~--- столбец,
-      \texttt{Z -88} --- страница
+    \begin{tabularx}{\textwidth}{XXX}
+      \texttt{\&}~--- новая строка &
+      \texttt{\textbackslash}~--- столбец &
+      \texttt{Z -88} --- страница \\
+    \end{tabularx}
   \end{block}
 
   % Знаки препинания, имена собственные
@@ -162,21 +160,21 @@
       \begin{Verbatim}[fontsize=\footnotesize]
 <pb n="-25"/>
 <lb n="1"/>
-<w src="М+СRЦА"
-   xml:id="CrlNvz.1">
+<w xml:id="CrlNvz.1"
+    src="М+СRЦА">
   мѣсѧца</w>
 <lb n="2"/>
-<w src="ФЕVРDАРIА"
-   xml:id="CrlNvz.2">
+<w xml:id="CrlNvz.2"
+   src="ФЕVРDАРIА">
   феѵрꙋарїа</w>
-<w src="ВЪ"
-   xml:id="CrlNvz.3">
+<w xml:id="CrlNvz.3"
+   src="ВЪ">
   въ</w>
-<c xml:id="CrlNvz.4">,</c>
-<w src="4"
-   xml:id="CrlNvz.5">
+<w xml:id="CrlNvz.4"
+   src="Д#">
   д҃
 </w>
+<c xml:id="CrlNvz.5">,</c>
 \end{Verbatim}
     \end{column}
   \end{columns}
@@ -188,7 +186,7 @@
 
   \begin{block}{Морфология}
     \begin{itemize}
-      \item морфологическая разметка 5 житий ($\sim$50~тыс.\ с/у)
+      \item ручная морфологическая разметка 5 (?) житий ($\sim$50~тыс.\ с/у (???))
       \item лемматизация\autocite{sipunin:2018}
       \item частичная автоматизация морфологической разметки\autocite{sipunin:2020}
       \item конвергенция форматов представления
@@ -203,7 +201,7 @@
   \begin{enumerate}
     \item малый объём текстов
     \item<2-> орфографическая нормализация
-    \item<3-> разные кодировки, разные коллективы\ldots
+    \item<3-> разные подходы, кодировки, коллективы\ldots
   \end{enumerate}
 
   \onslide<2>
@@ -284,7 +282,7 @@
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{TEI XML + разметка}
+  \frametitle{TEI XML + морфологическая разметка}
 
   \begin{columns}[c]
     \begin{column}{6cm}
@@ -355,8 +353,8 @@
 
 \begin{frame}{}
   \centering
-
   \vfill
+  \Huge
   Q\&A
   \vfill
 \end{frame}
